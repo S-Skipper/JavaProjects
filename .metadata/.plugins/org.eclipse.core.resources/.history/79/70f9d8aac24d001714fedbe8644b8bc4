@@ -1,0 +1,32 @@
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+
+
+public class WBFrame {
+	JFrame mFrame;
+	private JTextField textField;
+	
+	public WBFrame(){
+		mFrame = new JFrame();
+		mFrame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("\u786E\u5B9A");
+		btnNewButton.setBounds(310, 10, 93, 23);
+		mFrame.getContentPane().add(btnNewButton);
+		
+		textField = new JTextField();
+		textField.setBounds(34, 10, 230, 23);
+		mFrame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(34, 57, 369, 180);
+		mFrame.getContentPane().add(textArea);
+	}
+	
+	public static void main(String [] args) {
+		new WBFrame();
+	}
+}

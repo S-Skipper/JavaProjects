@@ -1,0 +1,10 @@
+computeSourcePath=true
+contextsDir=D\:\\phpStudy\\tomcat\\conf\\Catalina\\localhost
+eclipse.preferences.version=1
+fixTomcatHomeBug=fixed
+managerUrl=http\://localhost\:8080/manager
+tomcatBase=D\:\\phpStudy\\tomcat
+tomcatConfigFile=D\:\\phpStudy\\tomcat\\conf\\server.xml
+tomcatDir=D\:\\phpStudy\\tomcat
+tomcatJRE=1460365988343
+tomcatVersion=tomcatV7

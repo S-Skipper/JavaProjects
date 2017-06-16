@@ -1,0 +1,66 @@
+==================================================
+OpenAI's Open Source Mobile Agent System (OSMoSys)
+==================================================
+This is a simple mobile agent framework in Java.  The agent itself is run as a
+thread in the Java Virtual Machine (JVM) and can migrate to other machines.  
+For more information, see the JavaDocs in docs/html.  The JavaDocs will have to
+be generated (see INSTALL) or can viewed online.
+
+
+Components
+==========
+
+  The Daemon
+  ----------
+  The Daemon is responsible for managing Agents and providing services to the
+  running Agents.  It is also responsible for transporting MobileAgents to
+  Daemons running on other hosts.
+
+  The Agent
+  ---------
+  The heart of an Agent is the "executeAgent()" method.  The Daemon will wrap
+  the Agent in a Thread that will run the "executeAgent()" method.
+
+  The MobileAgent
+  ---------------
+  This is an extension to the Agent class that is transportable to other
+  machines The MobileAgent can call "migrateTo()" and specify a host and the
+  Daemon will attempt to move the MobileAgent to a Daemon running elsewhere.
+  Transmission is done using sockets and utilizes Java's Serialization
+  capabilities.  When a MobileAgent migrates to another Daemon, it will in
+  essence be restarted.  This means that the MobileAgent itself MUST KEEP
+  TRACK OF STATE.  Only MobileAgents will be transported by Daemon.
+
+  DaemonService
+  -------------
+  This is the base class for any "services" that can be provided to the agent
+  system.  This is a special type of non-mobile Agent that (in the future)
+  Agents will be able to query the Daemon for and exchange data with.
+
+
+Installation
+============
+  Please see the INSTALL file for installation information.
+
+
+Running the Daemon
+==================
+  There are several ways to run the Daemon.  The most common would be to
+  execute "java net.openai.ai.agent.Daemon <options>".  Execute the command
+  without any options for usage information.  The most flexible method for
+  running the Daemon is to use the XML config file option and (optionally)
+  override the values in the config file on the command line.  For instance:
+
+  $ java net.openai.ai.agent.Daemon -c DaemonConfig.xml -p 4321
+
+  This will execute the Daemon on port 4321 even if the XML file specifies
+  otherwise.
+
+
+Examples
+========
+  There are several examples included with the package.  They are located
+  in the "examples" directory within the top-level java-agents directory.
+  After you have compiled OSMoSys itself, you may change over to the each
+  of the example directories within the examples directory and execute a
+  "javac *.java" to compile each example.

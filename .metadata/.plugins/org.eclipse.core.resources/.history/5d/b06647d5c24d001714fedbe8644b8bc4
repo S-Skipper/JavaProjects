@@ -1,0 +1,15 @@
+import javax.swing.JFrame;
+
+
+public class WBFrame extends JFrame{
+	JFrame mFrame;
+	
+	public WBFrame(){
+		mFrame = new JFrame();
+		mFrame.getContentPane().setLayout(null);
+	}
+	
+	public static void main(String [] args) {
+		new WBFrame();
+	}
+}

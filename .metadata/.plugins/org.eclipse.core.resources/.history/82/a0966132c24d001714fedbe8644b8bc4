@@ -1,0 +1,14 @@
+import javax.swing.JFrame;
+
+
+public class WBFrame {
+	JFrame mFrame;
+	
+	public WBFrame(){
+		mFrame = new JFrame();
+	}
+	
+	public static void main(String [] args) {
+		new WBFrame();
+	}
+}
